@@ -1,10 +1,10 @@
-﻿using System;
-namespace ForeignExchange.Models
+﻿namespace ForeignExchange.Models
 {
     public class Rate
     {
-        public Rate()
-        {
-        }
+        public object RateId { get; set; }
+        public object Code { get; set; }
+        public object TaxRate { get; set; }
+        public object Name { get; set; }
     }
 }

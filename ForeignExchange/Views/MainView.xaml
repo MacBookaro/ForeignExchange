@@ -45,6 +45,7 @@
             <Picker 
                 ItemDisplayBinding="{Binding Name}"
                 ItemsSource="{Binding Rates}"
+                SelectedItem="{Binding SourceRate, Mode=TwoWay}"
                 Title="Select a source rate...">
             </Picker>
             
@@ -52,17 +53,24 @@
                 Text="Source rate:">
             </Label>
             <Picker 
-            Title="Select a source rate...">
+                ItemDisplayBinding="{Binding Name}"
+                ItemsSource="{Binding Rates}"
+                SelectedItem="{Binding TargetRate, Mode=TwoWay}"
+                Title="Select a target rate...">
             </Picker>
 
-            <ActivityIndicator></ActivityIndicator>
+            <ActivityIndicator
+                IsRunning="{Binding IsRunning, Mode=TwoWay}">
+            </ActivityIndicator>
             
             <Button
                 BackgroundColor="Green"
                 BorderRadius="25"
+                Command="{Binding ConvertCommand}"
                 FontAttributes="Bold"
                 FontSize="Large"
                 HeightRequest="50"
+                IsEnabled="{Binding IsEnable, Mode=TwoWay}"
                 Text="Convert"
                 TextColor="White">
             </Button>
@@ -72,7 +80,7 @@
                 FontSize="Large"
                 HorizontalTextAlignment="Center"
                 Margin="0,10"
-                Text="Loading rates..."
+                Text="{Binding Result, Mode=TwoWay}"
                 VerticalOptions="FillAndExpand"
                 VerticalTextAlignment="Center">
             </Label>
