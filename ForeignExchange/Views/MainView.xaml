@@ -3,13 +3,17 @@
     xmlns="http://xamarin.com/schemas/2014/forms" 
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
     x:Class="ForeignExchange.Views.MainView"
-    BackgroundColor="Yellow"
     BindingContext="{Binding Main, Source={StaticResource Locator}}">
+
+    <ContentPage.Padding>
+        <OnPlatform 
+            x:TypeArguments="Thickness"
+            iOS="20,30,20,10"
+            Android="10"/>
+    </ContentPage.Padding>
     
     <ContentPage.Content>
-        <StackLayout
-            Padding="20,30,20,10">
-            
+        <StackLayout>
             <Label
                 FontAttributes="Bold,Italic"
                 FontSize="Large"
@@ -35,7 +39,7 @@
                 Text="Amount:">
             </Label>
             <Entry
-                Text="{Binding Amount, Mode=ToWay}"
+                Text="{Binding Amount, Mode=TwoWay}"
                 Placeholder="Entry the amount to convert...">
             </Entry>
             
@@ -50,7 +54,7 @@
             </Picker>
             
             <Label
-                Text="Source rate:">
+                Text="Target rate:">
             </Label>
             <Picker 
                 ItemDisplayBinding="{Binding Name}"
@@ -76,7 +80,7 @@
             </Button>
 
             <Label
-                BackgroundColor="Olive"
+                BackgroundColor="Silver"
                 FontSize="Large"
                 HorizontalTextAlignment="Center"
                 Margin="0,10"
