@@ -35,6 +35,7 @@
                 Text="Amount:">
             </Label>
             <Entry
+                Text="{Binding Amount, Mode=ToWay}"
                 Placeholder="Entry the amount to convert...">
             </Entry>
             
@@ -42,7 +43,9 @@
                 Text="Source rate:">
             </Label>
             <Picker 
-            Title="Select a source rate...">
+                ItemDisplayBinding="{Binding Name}"
+                ItemsSource="{Binding Rates}"
+                Title="Select a source rate...">
             </Picker>
             
             <Label
@@ -51,6 +54,28 @@
             <Picker 
             Title="Select a source rate...">
             </Picker>
+
+            <ActivityIndicator></ActivityIndicator>
+            
+            <Button
+                BackgroundColor="Green"
+                BorderRadius="25"
+                FontAttributes="Bold"
+                FontSize="Large"
+                HeightRequest="50"
+                Text="Convert"
+                TextColor="White">
+            </Button>
+
+            <Label
+                BackgroundColor="Olive"
+                FontSize="Large"
+                HorizontalTextAlignment="Center"
+                Margin="0,10"
+                Text="Loading rates..."
+                VerticalOptions="FillAndExpand"
+                VerticalTextAlignment="Center">
+            </Label>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
