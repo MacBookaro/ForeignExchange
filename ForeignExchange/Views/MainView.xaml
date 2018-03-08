@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage 
+    xmlns="http://xamarin.com/schemas/2014/forms" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+    x:Class="ForeignExchange.Views.MainView"
+    BackgroundColor="Yellow"
+    BindingContext="{Binding Main, Source={StaticResource Locator}}">
+    
+    <ContentPage.Content>
+        <StackLayout
+            Padding="20,30,20,10">
+            
+            <Label
+                FontAttributes="Bold,Italic"
+                FontSize="Large"
+                HorizontalOptions="Center"
+                HorizontalTextAlignment="Center"
+                Text="Foreign Exchange"
+                VerticalOptions="Center"
+                VerticalTextAlignment="Center">
+            </Label>
+            
+            <Label
+                FontAttributes="Bold,Italic"
+                FontSize="Large"
+                HorizontalOptions="Center"
+                HorizontalTextAlignment="Center"
+                Text="@MacBookaro"
+                TextColor="Green"
+                VerticalOptions="Center"
+                VerticalTextAlignment="Center">
+            </Label>
+            
+            <Label
+                Text="Amount:">
+            </Label>
+            <Entry
+                Placeholder="Entry the amount to convert...">
+            </Entry>
+            
+            <Label
+                Text="Source rate:">
+            </Label>
+            <Picker 
+            Title="Select a source rate...">
+            </Picker>
+            
+            <Label
+                Text="Source rate:">
+            </Label>
+            <Picker 
+            Title="Select a source rate...">
+            </Picker>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
